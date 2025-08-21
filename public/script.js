@@ -8,11 +8,15 @@ window.onload = function(){
     return response.json();
   })
   .then(data => {
-      document.getElementById("nama").innerText = data.nama;
-      document.getElementById("usia").innerText = data.usia;
-    console.log(data);
+    if (data.message === "success") {
+      console.log("Data berhasil dimuat:", data);
+      // Process the data as needed
+      // The data structure is: {"message":"success","data":{"id":{"nama_lengkap":"...", "email":"...", ...}}}
+    } else {
+      console.log("Tidak ada data pendaftar");
+    }
   })
   .catch(error => {
-    console.error("Terjadi kesalahan baru");
+    console.error("Terjadi kesalahan:", error);
   })
 }

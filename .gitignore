@@ -29,3 +29,6 @@
 # Temporary files
 *.tmp
 *.temp
+
+# Compiled binary
+pendaftaran-coc
